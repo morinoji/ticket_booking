@@ -1,0 +1,88 @@
+.service {
+    padding: 80px 0 60px;
+
+    &-title {
+        margin-bottom: 46px;
+
+        @include responsive_table {
+            margin-bottom: 70px;
+        }
+
+        &__domain,
+        &__description {
+            text-transform: uppercase;
+            font-weight: 400;
+            text-align: center;
+        }
+
+        &__domain {
+            color: $orange-color;
+            font-size: 5rem;
+            margin-bottom: 0;
+
+            @include responsive_bothTM {
+                font-size: 3.8rem;
+            }
+        }
+
+        &__description {
+            margin-top: 10px;
+            font-size: 3rem;
+
+            @include responsive_bothTM {
+                font-size: 2.4rem;
+            }
+
+            @include responsive_mobile {
+                font-size: 2rem;
+                width: 80%;
+                margin: 18px auto 0;
+                line-height: 28px;
+
+            }
+        }
+    }
+
+    &-option {
+        @include gridBox(3, 0, 40px);
+
+        &__item {
+            @include flexBox(hor);
+
+            @include responsive_bothTM {
+                flex-direction: column;
+            }
+        }
+
+        &__icon {
+            margin-right: 20px;
+
+            @include responsive_bothTM {
+                margin: 0 0 18px;
+            }
+        }
+
+        &__text {
+            line-height: 22px;
+            font-size: 1.8rem;
+
+            @include responsive_bothTM {
+                text-align: center;
+                line-height: 24px;
+            }
+        }
+
+        @include responsive_mobile {
+            grid-template-columns: inherit;
+
+            &__item {
+                margin-bottom: 28px;
+            }
+
+            &__text {
+                width: 74%;
+                margin: 0 auto;
+            }
+        }
+    }
+}

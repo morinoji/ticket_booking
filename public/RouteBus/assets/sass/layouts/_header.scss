@@ -1,0 +1,103 @@
+.header {
+    background-color: $back-white;
+
+    &-wrapper {
+        height: 90px;
+        @include flexBox(bothSides);
+
+        @include responsive_bothTM {
+            margin: 0 16px;
+        }
+    }
+
+    &-nav {
+        height: 100%;
+        @include flexBox(hor);
+
+        @include responsive_bothTM {
+            width: 100%;
+            justify-content: center;
+            margin-left: 24px;
+        }
+    }
+
+    &-img {
+        position: relative;
+        min-width: 170px;
+        height: 100%;
+
+        &__link {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 10;
+
+            background-color: $back-white;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            box-shadow: rgba(105, 105, 105, 0.35) 0px 5px 15px;
+
+            @include responsive_bothTM {
+                left: 50%;
+                transform: translateX(-50%);
+                min-width: 127px;
+
+                &>img {
+                    height: 102px;
+                }
+            }
+        }
+    }
+
+    &-language {
+        @include flexBox(hor);
+
+        &__img {
+            width: 36px;
+            margin-left: 16px;
+        }
+    }
+
+    &-list {
+        margin-left: 20px;
+
+        .nav-link {
+            margin: 0 10px;
+            text-transform: uppercase;
+            color: $text-color;
+
+            &.active {
+                color: $orange-color;
+            }
+        }
+    }
+
+    &-mobile {
+        display: none;
+
+        @include responsive_bothTM {
+            display: block;
+        }
+
+        &__tabs {
+            font-size: 2.8rem;
+            color: $back-gray;
+        }
+    }
+
+    &-offCanvas {
+        .offcanvas-header {
+            padding: 16px 20px;
+        }
+
+        &__list {
+            .nav-link {
+                font-size: 2rem;
+                color: $text-color;
+                padding: 14px 0px 14px 10px;
+                margin: 0 20px 0 10px;
+                border-bottom: 1px solid $border-color;
+            }
+        }
+    }
+}

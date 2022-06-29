@@ -1,0 +1,30 @@
+.banner {
+    &-slide {
+
+        &__link {
+            position: relative;
+            padding-top: 31%;
+        }
+
+        &__img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        &__button {
+
+
+            &.swiper-button-next,
+            &.swiper-rtl .swiper-button-prev {
+                right: 50px;
+            }
+
+            &.swiper-button-prev,
+            &.swiper-rtl .swiper-button-next {
+                left: 50px;
+            }
+        }
+    }
+}

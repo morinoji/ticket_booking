@@ -1,0 +1,227 @@
+.popular {
+    position: relative;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 150px 0 50px;
+
+    @include responsive_mobile {
+        padding: 88px 0 88px;
+    }
+
+    &-bottom {
+        width: 100%;
+        object-fit: cover;
+    }
+
+    &.page {
+        padding: 80px 0 10px;
+    }
+
+    &-page {
+        .popular-slide__item {
+            margin-bottom: 20px;
+
+            &:nth-child(2n) {
+                grid-template-columns: 24% 75%;
+
+                @include responsive_pcLower {
+                    grid-template-columns: 24% 74%;
+                }
+            }
+        }
+
+        &__mobile {
+            @include gridBox(3, 20px, 20px);
+            display: none;
+
+            @include responsive_bothTM {
+                display: grid;
+            }
+
+            @include responsive_mobile {
+                @include gridBox(2, 12px, 12px);
+            }
+
+            &-item {
+                position: relative;
+                display: block;
+                padding-top: 150%;
+                overflow: hidden;
+            }
+
+            &-link {
+                position: absolute;
+                top: 0%;
+                left: 0%;
+                width: 100%;
+                height: 100%;
+
+                &>img {
+                    border-radius: 16px;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+
+    &-wrapper {
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            right: -62px;
+        }
+
+        .swiper-button-prev,
+        .swiper-rtl .swiper-button-next {
+            left: -62px;
+        }
+
+        @include responsive_pcLower {
+            .popular-slide__button {
+                display: none;
+            }
+        }
+    }
+
+    &-heading {
+        font-size: 3.6rem;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 60px;
+
+        @include responsive_mobile {
+            font-size: 2.6rem;
+        }
+    }
+
+    &-slide {
+        position: relative;
+
+        &__item {
+            display: grid;
+            gap: 0 14px;
+            grid-template-columns: 75% 24%;
+
+            @include responsive_pcLower {
+                gap: 0 21px;
+                grid-template-columns: 74% 24%;
+            }
+        }
+
+        &__bottom {
+            display: grid;
+            gap: 0 20px;
+            grid-template-columns: 43% 55%;
+
+            &>a,
+            &>a>img {
+                height: 100%;
+            }
+
+            @include responsive_pcLower {
+                grid-template-columns: 43% 54%;
+            }
+        }
+
+        &__left {
+            display: grid;
+            gap: 16px 0px;
+        }
+
+        &__right>a,
+        &__medium,
+        &__large,
+        &__small {
+            position: relative;
+            overflow: hidden;
+
+            &>img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 16px;
+            }
+        }
+
+        &__large {
+            padding-top: 23%;
+            grid-column-start: 1;
+            grid-column-end: 2;
+        }
+
+        &__small {
+            padding-top: 53%;
+        }
+
+        &__text {
+            color: $back-white;
+            position: absolute;
+            bottom: 22px;
+            left: 20px;
+            font-size: 2.0rem;
+
+            @include responsive_bothTM {
+                bottom: 20px;
+                font-weight: 500;
+                font-size: 1.8rem;
+            }
+        }
+
+        &__cover {
+            padding-top: 23%;
+            border-radius: 16px;
+
+            &>img {
+                position: absolute;
+                top: 0;
+            }
+        }
+
+        &__right {
+            &>a {
+                padding-top: 149%;
+                overflow: hidden;
+
+            }
+        }
+    }
+
+    &-btn {
+        min-width: 200px;
+        border-radius: 28px;
+        font-size: 1.9rem;
+        text-transform: uppercase;
+        margin: 48px auto 0;
+    }
+
+    &-mobile {
+        display: none;
+
+        @include responsive_bothTM {
+            display: block;
+        }
+
+        &__item {
+            &>a {
+                position: relative;
+                padding-top: 115%;
+
+                &>img {
+                    position: absolute;
+                    bottom: 0;
+                    height: 100%;
+                    left: 0;
+                    width: 100%;
+                    border-radius: 16px;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}

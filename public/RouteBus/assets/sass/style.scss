@@ -1,0 +1,19 @@
+// ============ Scss SetUp ===========
+@import "./SetUpBase/variables";
+@import "./SetUpBase/reset";
+@import "./SetUpBase/mixin";
+@import "./SetUpBase/base";
+
+// ============ Scss Content ===========
+@import "./layouts/header";
+@import "./layouts/footer";
+@import "./layouts/service";
+
+@import "./components/banner";
+@import "./components/tabs";
+@import "./components/popular";
+@import "./components/brand";
+@import "./components/search";
+@import "./components/details";
+// @import "nav";
+// @import "info";

@@ -1,0 +1,240 @@
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth !important;
+}
+
+body {
+    scroll-behavior: smooth !important;
+    transition: all 0.3s ease;
+    transition: 0.3s;
+    overflow-x: hidden;
+    // overflow-y: auto !important;
+    // font-family: $font-text-bold;
+    // min-width: 1240px;
+
+    line-height: 1;
+    color: $text-color;
+    position: static;
+
+    margin: 0;
+    font-size: 1.6rem;
+    padding-right: 0 !important;
+
+    background-color: $back-white !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+    background-size: cover !important;
+    background-position: center center !important;
+}
+
+.back-white {
+    background-color: #fff;
+}
+
+.hide {
+    display: none !important;
+}
+
+
+.color-red {
+    color: $red-color;
+}
+
+// ==== Button ====
+.form-control:focus,
+button:focus {
+    box-shadow: none !important;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.btn-button {
+    background-image: $mix-color;
+    color: $back-white;
+    font-size: 2rem;
+    border: 0;
+
+    padding: 7px 20px;
+    border-radius: 10px;
+    @include flexBox(both);
+}
+
+.brand-slide__button,
+.banner-slide__button,
+.popular-slide__button {
+    &::after {
+        display: none;
+    }
+
+    &>svg {
+        min-width: 40px;
+    }
+}
+
+.modal-backdrop.show {
+    opacity: 0.8;
+}
+
+.offcanvas {
+    overflow-y: auto;
+}
+
+.offcanvas-body {
+    overflow-y: inherit;
+}
+
+
+.swal2-popup.swal2-modal.swal2-show {
+    width: 540px;
+    padding: 30px 17px;
+    border-radius: 10px;
+
+    #swal2-title.swal2-title {
+        font-size: 2.4em;
+    }
+
+    &>.swal2-icon {
+        font-size: initial;
+        border: 4px solid;
+
+        &>.swal2-icon-content {
+            font-size: 6rem;
+        }
+    }
+
+    &>.swal2-html-container {
+        font-size: 2rem;
+        line-height: 28px;
+    }
+
+    & button {
+        padding: 12px 22px;
+        font-size: 2rem;
+    }
+}
+
+.alert-modal {
+    color: #fff;
+
+    &:hover {
+        color: #fff;
+    }
+}
+
+
+/* ================== Pagination ================== */
+.pagination {
+    margin-top: 28px;
+    justify-content: center;
+}
+
+.pagination-list {
+    @include flexBox(both);
+}
+
+.pagination-item {
+    list-style: none;
+    margin: 0 4px;
+}
+
+.pagination-item--active .pagination-item__link {
+    color: #fff;
+    border-radius: 50%;
+    background-image: $mix-color;
+    border: 0;
+}
+
+.pagination-item--active .pagination-item__link:hover {
+    background-color: #ed5c3f;
+}
+
+.pagination-item__link {
+    --height: 30px;
+
+    display: block;
+    text-decoration: none;
+    font-size: 1.8rem;
+    @include flexBox(both);
+    color: $text-color;
+
+    height: var(--height);
+    width: var(--height);
+    line-height: var(--height);
+
+    background-color: $back-white;
+    border: 1px solid $back-gray;
+    border-radius: 50%;
+    margin: 0 4px;
+
+    &:hover {
+        background-image: $mix-color !important;
+        color: $back-white;
+        // border-color: $orange-color;
+    }
+
+    &.dots {
+        border: 0;
+    }
+}
+
+
+@include responsive_big {
+    .container-xl {
+        max-width: 1400px;
+    }
+}
+
+@include responsive_bothTM {
+    .hide-on-mobile-tablet {
+        display: none !important;
+    }
+
+    .banner-slide__button,
+    .brand-slide__button,
+    .popular-slide__button {
+        display: none;
+    }
+
+    .btn-button {
+        font-size: 1.6rem;
+        padding: 6px 20px;
+    }
+}
+
+@include responsive_table {
+    .hide-on-tablet {
+        display: none !important;
+    }
+}
+
+@include responsive_mobile {
+    .hide-on-mobile {
+        display: none !important;
+    }
+}
+
+
+
+
+// ::-webkit-scrollbar {
+//     width: 6px;
+// }
+
+/* Track */
+// ::-webkit-scrollbar-track {
+//     background: #f1f1f1;
+//     border-radius: 50px;
+// }
+
+/* Handle */
+// ::-webkit-scrollbar-thumb {
+//     border-radius: 50px;
+//     background: #dcdcdc;
+// }
+
+/* Handle on hover */
+// ::-webkit-scrollbar-thumb:hover {
+//     background: #a1a1a1;
+// }

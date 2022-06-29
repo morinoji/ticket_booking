@@ -1,0 +1,121 @@
+/* PC BIG */
+$res_big: "only screen and (min-width: 1650px)";
+
+/* PC fit */
+$res_fit: "only screen and (max-width: 1440px)";
+
+/* PC HD */
+$res_HD: "only screen and (max-width: 1281px)";
+
+/* PC LOWER  min-1023px */
+$res_pcLower: "only screen and (min-width: 63.9375em) and (max-width: 1240px)";
+
+/* Mobile & tablet */
+$res_bothTM: "only screen and (max-width: 63.9375em)";
+
+/* Tablet */
+$res_table: "only screen and (min-width: 46.25em) and (max-width: 63.9375em)";
+
+/* Mobile */
+$res_mobile: "only screen and (max-width: 46.1875em)";
+
+/* Phone Small */
+$res_small: "only screen and (max-width: 20em)";
+
+// Phone Small 
+@mixin responsive_ip5 {
+    @media #{$res_small} {
+        @content;
+    }
+}
+
+// Mobile
+@mixin responsive_mobile {
+    @media #{$res_mobile} {
+        @content;
+    }
+}
+
+// Tablet
+@mixin responsive_table {
+    @media #{$res_table} {
+        @content;
+    }
+}
+
+// Mobile & tablet
+@mixin responsive_bothTM {
+    @media #{$res_bothTM} {
+        @content;
+    }
+}
+
+//  PC LOWER  min-1023px  (min-width: 63.9375em) and (max-width: 1240px)
+@mixin responsive_pcLower {
+    @media #{$res_pcLower} {
+        @content;
+    }
+}
+
+// PC HD (max-width: 1281px)
+@mixin responsive_HD {
+    @media #{$res_HD} {
+        @content;
+    }
+}
+
+// PC fit (max-width: 1440px)
+@mixin responsive_fit {
+    @media #{$res_fit} {
+        @content;
+    }
+}
+
+//  PC BIG min-width: 1650px
+@mixin responsive_big {
+    @media #{$res_big} {
+        @content;
+    }
+}
+
+// ----- Placeholder Scss -------
+
+%backgroundImg {
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+}
+
+%upBoldText {
+    font-weight: bold;
+    // font-family: $font-text-bold;
+    text-transform: uppercase;
+}
+
+@mixin flexBox($value) {
+    display: flex;
+
+    @if ($value==ver) {
+        justify-content: center;
+    }
+
+    @if ($value==hor) {
+        align-items: center;
+    }
+
+    @if ($value==both) {
+        justify-content: center;
+        align-items: center;
+    }
+
+    @if ($value==bothSides) {
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+@mixin gridBox($value, $height, $width) {
+    display: grid;
+    grid-template-columns: repeat($value, 1fr);
+    gap: $height $width;
+}

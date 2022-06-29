@@ -1,0 +1,22 @@
+.price_style {
+    color: red;
+    font-size: large;
+    font-weight: 600;
+}
+
+.heading_text {
+    font-size: 17px;
+    font-weight: bolder;
+    color: #0a0a0a;
+}
+
+.search_style {
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+
+.add_style {
+    display: flex;
+    justify-content: flex-end;
+}

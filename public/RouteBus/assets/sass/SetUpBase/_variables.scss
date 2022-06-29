@@ -1,0 +1,32 @@
+// =================== Font family text ==================
+// @import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Expanded:wght@500&display=swap');
+
+
+@font-face {
+    src: url('../../css/SF-Pro-Display-Light.otf');
+    font-family: 'SF-Pro';
+}
+
+// $font-text-bold: "SF-Pro";
+
+
+// $primary-font: 'Encode Sans Semi Expanded',
+// sans-serif;
+
+// ======================== Color Main =====================
+$orange-color: #F58523;
+$mix-color: linear-gradient(to right, #F12711, #F5AF19);
+$red-color: #F12711;
+$yellow-color: #F5AF19;
+$green-color: #2EA94E;
+$black-color: #000;
+
+// Color Background
+$back-gray: #777777;
+$back-light: #FFFFFF;
+$back-white: #fff;
+$back-table: #F5F6F6;
+$border-color: #C4C4C4;
+
+// Text color
+$text-color: #3A3938;

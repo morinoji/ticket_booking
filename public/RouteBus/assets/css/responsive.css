@@ -1,0 +1,100 @@
+/* =================== PC BIG ===================*/
+@media (min-width: 1650px) {
+  .container-xl {
+    max-width: 1520px;
+  }
+}
+
+/* =================== PC Lower ===================*/
+@media only screen and (max-width: 1440px) {}
+
+/* =================== PC HD ===================*/
+@media only screen and (max-width: 1281px) {
+  .hide-on-pc-HD {
+    display: none;
+  }
+}
+
+/* =================== PC Responsive ===================*/
+@media only screen and (max-width: 1200px) {}
+
+/* ============= PC LOWER  min-1023px ===============*/
+@media only screen and (min-width: 63.9375em) and (max-width: 1240px) {
+  .hide-on-pc-Lose {
+    display: none;
+  }
+
+
+
+}
+
+/* =============== Mobile & tablet ==============*/
+@media only screen and (max-width: 63.9375em) {
+  .hide-on-mobile-tablet {
+    display: none !important;
+  }
+
+}
+
+/* ==================== Tablet ===================*/
+@media only screen and (min-width: 46.25em) and (max-width: 63.9375em) {
+  .hide-on-tablet {
+    display: none !important;
+  }
+
+}
+
+/* =================== Tablet SM =================== */
+@media only screen and (max-width: 37em) {}
+
+/* =================== Mobile ===================*/
+@media only screen and (max-width: 46.1875em) {
+  .hide-on-mobile {
+    display: none;
+  }
+
+
+}
+
+/* ================= Iphone 5/SE ===============*/
+@media only screen and (max-width: 24.4375em) {}
+
+@media only screen and (min-width: 63.9375em) {
+
+  /* 5 colum Bootstrap */
+  .col-xs-5ths,
+  .col-sm-5ths,
+  .col-md-5ths,
+  .col-lg-5ths {
+    position: relative;
+    min-height: 1px;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .col-xs-5ths {
+    width: 20%;
+    float: left;
+  }
+
+  @media (min-width: 768px) {
+    .col-sm-5ths {
+      width: 20%;
+      float: left;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .col-md-5ths {
+      width: 20%;
+      float: left;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .col-lg-5ths {
+      width: 20%;
+      float: left;
+    }
+  }
+}

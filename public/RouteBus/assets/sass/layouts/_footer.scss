@@ -1,0 +1,112 @@
+.footer {
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+
+    &-wrapper {
+        @include flexBox(bothSides);
+        align-items: flex-start;
+
+        @include responsive_pcLower {
+            justify-content: space-around;
+        }
+
+        @include responsive_bothTM {
+            flex-direction: column-reverse;
+        }
+    }
+
+    &-heading {
+        margin-bottom: 18px;
+        font-size: 2rem;
+        text-transform: uppercase;
+    }
+
+    &-assist,
+    &-info {
+        @include responsive_bothTM {
+            width: 96%;
+            margin-left: auto;
+        }
+
+        @include responsive_mobile {
+            width: 100%;
+            padding: 20px 10px 16px !important;
+        }
+    }
+
+    &-assist {
+        padding: 90px 0 56px;
+
+        @include responsive_bothTM {
+            padding: 20px 0 16px;
+        }
+    }
+
+    &-info {
+        padding: 90px 0 56px;
+
+        &__img {
+            margin-top: 20px;
+            width: 200px;
+
+            @include responsive_bothTM {
+                margin: 20px auto 0;
+            }
+        }
+
+        @include responsive_pcLower {
+            width: 40%;
+            line-height: 20px;
+        }
+
+        @include responsive_bothTM {
+            padding: 20px 0 16px;
+        }
+    }
+
+    &-nav {
+        &__link {
+            padding: 4px 0;
+            color: $text-color;
+            font-weight: 400;
+            line-height: 22px;
+            @include flexBox(hor);
+
+            &>svg {
+                min-width: 24px;
+                margin-right: 16px;
+            }
+        }
+    }
+
+    &-bottom {
+        padding: 40px 0 80px;
+        background-color: $back-white;
+
+        &__cover {
+            width: 86%;
+            margin: 0 auto;
+
+            @include responsive_bothTM {
+                width: 96%;
+            }
+        }
+
+        &__text {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            line-height: 24px;
+
+            &.premium {
+                display: block;
+                margin: 40px 0 0;
+            }
+        }
+
+        @include responsive_bothTM {
+            padding: 40px 0 32px;
+            text-align: center;
+        }
+    }
+}

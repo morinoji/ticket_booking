@@ -1,0 +1,134 @@
+.tabs {
+    &-wrapper {
+        position: relative;
+        height: 70px;
+
+        @include responsive_bothTM {
+            margin-top: 30px;
+            height: 100%;
+        }
+    }
+
+    &-search {
+        position: absolute;
+        bottom: 0;
+        width: 80%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 99;
+
+        @include responsive_bothTM {
+            position: relative;
+            width: 100%;
+
+        }
+
+        &__group {
+            border-radius: 8px;
+            padding: 7px 10px 7px 20px;
+            background-color: $back-white;
+            border: 1px solid $border-color;
+
+            @include responsive_bothTM {
+                padding: 7px 10px 7px 16px;
+            }
+
+            &>input {
+                padding: 0;
+                font-size: 2rem;
+                border: 0;
+
+                @include responsive_bothTM {
+                    font-size: 1.8rem;
+                    margin-right: 6px;
+                }
+            }
+
+            &>button {
+                border: 0;
+                border-radius: 8px !important;
+
+                &>svg {
+                    margin-right: 6px;
+                }
+
+                @include responsive_mobile {
+                    padding: 6px 12px;
+
+                    &>svg {
+                        margin-right: 0px;
+                    }
+                }
+            }
+        }
+
+        .nav-tabs {
+            margin-bottom: -1px;
+            border-bottom: 0;
+
+            @include responsive_bothTM {
+                justify-content: center;
+            }
+
+            @include responsive_mobile {
+                justify-content: space-evenly;
+            }
+
+            .nav-link {
+                padding: 18px 40px;
+                margin-right: 14px;
+                border: 0;
+                font-size: 2rem;
+
+                margin-bottom: 0;
+                color: $back-white;
+                border-top-left-radius: 12px;
+                border-top-right-radius: 12px;
+                background-color: $back-gray;
+
+                &.active {
+                    background-color: rgb(251, 251, 251);
+                    color: $text-color;
+                }
+
+                @include responsive_bothTM {
+                    padding: 15px 38px;
+
+                    &.active {
+                        background-color: #ececec;
+                    }
+                }
+
+                @include responsive_mobile {
+                    margin-right: 0px;
+                }
+
+            }
+        }
+
+        .tab-content {
+            position: relative;
+            padding: 40px 38px;
+
+            border-bottom-right-radius: 12px;
+            border-bottom-left-radius: 12px;
+            border-top-right-radius: 12px;
+
+            background-color: $back-light;
+            text-decoration: none;
+            background-color: rgb(251, 251, 251);
+            box-shadow: rgba(0, 0, 0, 0.10) 0px 10px 15px -3px, rgba(0, 0, 0, 0.12) 0px 4px 6px -2px;
+
+            @include responsive_bothTM {
+                border-top-left-radius: 12px;
+                background-color: #ececec;
+
+                padding: 32px 28px;
+            }
+
+            @include responsive_mobile {
+                padding: 22px 16px 22px;
+            }
+        }
+    }
+}

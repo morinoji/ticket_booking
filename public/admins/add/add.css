@@ -1,0 +1,13 @@
+.substring {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.select2-selection__choice {
+    background-color: #f9f9f9 !important;
+}
+
+
+

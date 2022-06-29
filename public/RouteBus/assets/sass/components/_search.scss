@@ -1,0 +1,103 @@
+.search {
+    padding-bottom: 20px;
+
+    @include responsive_pcLower {
+        padding: 78px 0 20px;
+    }
+
+    @include responsive_table {
+        padding: 78px 0 20px;
+    }
+
+    @include responsive_mobile {
+        padding: 44px 0 20px;
+    }
+
+    &-header {
+        position: relative;
+        padding-top: 8px;
+
+        @include responsive_pcLower {
+            .popular-heading {
+                font-size: 3rem;
+            }
+        }
+
+        @include responsive_table {
+            .popular-heading {
+                font-size: 3rem;
+            }
+        }
+
+        @include responsive_mobile {
+            .popular-heading {
+                margin-bottom: 26px;
+                font-size: 2rem;
+                // font-weight: bold;
+            }
+        }
+
+
+        &__lines {
+            position: absolute;
+            left: 51%;
+            top: 0;
+            height: 5px;
+            width: 22%;
+
+            border-radius: 50px;
+            background-color: $orange-color;
+
+            @include responsive_HD {
+                left: 52%;
+            }
+
+            @include responsive_mobile {
+                display: none;
+            }
+
+            &::before {
+                position: absolute;
+                content: "";
+                left: 103%;
+                height: 5px;
+                width: 8%;
+
+                border-radius: 50px;
+                background-color: $orange-color;
+            }
+
+            &::after {
+                position: absolute;
+                content: "";
+                left: 114%;
+                height: 5px;
+                width: 2%;
+
+                border-radius: 50px;
+                background-color: $orange-color;
+            }
+        }
+    }
+
+    &-list {
+        @include gridBox(4, 20px, 20px);
+
+
+        @include responsive_HD {
+            @include gridBox(3, 20px, 20px);
+        }
+
+        @include responsive_mobile {
+            @include gridBox(2, 10px, 10px);
+        }
+
+        .popular-page__mobile-item {
+            padding-top: 58%;
+
+            @include responsive_mobile {
+                padding-top: 130%;
+            }
+        }
+    }
+}
