@@ -263,18 +263,22 @@
                         <div class="swiper-wrapper">
                             <!-- slider image -->
                             @foreach($comps as $comp)
-                            <div class="swiper-slide brand-slide__item">
-                                <div class="brand-slide__cover">
-                                    <img src="{{$comp->getImages[0]->image}}" alt="Image Brand" style="border-radius: 16px;"
-                                         class="brand-slide__img">
 
-                                    <div class="brand-slide__info">
-                                        <img src="{{$comp->image}}" alt="Image Logo">
-                                        <p class="brand-slide__text">
-                                            {{$comp->comp_name}}
-                                        </p>
+                            <div class="swiper-slide brand-slide__item">
+                                <a href="{{route('findCarrier',['id'=>$comp->id])}}">
+                                    <div class="brand-slide__cover">
+                                        <img src="{{$comp->getImages[0]->image}}" alt="Image Brand" style="border-radius: 16px;"
+                                             class="brand-slide__img">
+
+                                        <div class="brand-slide__info">
+                                            <img src="{{$comp->image}}" alt="Image Logo">
+                                            <p class="brand-slide__text">
+                                                {{$comp->comp_name}}
+                                            </p>
+                                        </div>
                                     </div>
-                                </div>
+                                </a>
+
                             </div>
                             @endforeach
 {{--                            <div class="swiper-slide brand-slide__item">--}}

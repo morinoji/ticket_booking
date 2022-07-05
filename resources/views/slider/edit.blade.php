@@ -24,10 +24,14 @@
                                         <input type="text"
                                                class="form-control" name="name" required
                                                value="{{$slider->name}}"
-                                               placeholder="Nhập tên danh mục">
+                                               placeholder="Nhập tên banner">
                                     </div>
-
+                                    <div class="form-check mb-2 mt-3">
+                                        <input class="form-check-input" id="validationFormCheck1" type="checkbox" name="is_contract" {{$slider->is_contract == 0? '':'checked' }}>
+                                        <label class="form-check-label" for="validationFormCheck1">Thuê xe hợp đồng</label>
+                                    </div>
                                 </div>
+
                                 <div class="col-1"></div>
                                 <div class="col-4">
                                     <div class="form-group">
@@ -38,9 +42,11 @@
                                         <input type="file"
                                                class="form-control-file"
                                                onchange="readURL(this)"
-                                               name="image" required>
+                                               name="image" >
                                     </div>
+
                                 </div>
+
                             </div>
                             <button type="submit" class="btn btn-primary">Lưu thay đổi</button>
                         </form>

@@ -8,5 +8,6 @@ interface CompRepositoryInterface extends BaseRepositoryInterface
     public function getComp($search,$route);
     public function injectImage($comps);
     public function getCompOfRoute($route);
-
+    public function paginate();
+//    public function findWeb($id);
 }

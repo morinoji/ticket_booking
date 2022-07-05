@@ -8,6 +8,7 @@
 @yield('title')
     <!-- Icon title -->
     <link rel=" shortcut icon" type="image/x-icon" href="{{asset('RouteBus/assets/images/Logo.png')}}">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <!-- fontAwesome Css -->
     <link rel="stylesheet" href="{{asset('RouteBus/assets/css/fontawesome.css')}}" />
     <!-- Swiper Css -->

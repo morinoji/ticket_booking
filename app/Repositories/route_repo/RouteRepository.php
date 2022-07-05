@@ -35,7 +35,6 @@ class RouteRepository extends BaseRepository implements RouteRepositoryInterface
     }
     public function findWeb($id)
     {
-
        return $this->model->leftJoin('route_details','routes.id','=','route_details.route_id')->where('route_details.route_id',$id)->get();
     }
     public function injectImage($routes)

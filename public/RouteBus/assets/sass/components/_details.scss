@@ -338,7 +338,93 @@
             }
 
             @include responsive_mobile {
-                width: 54%;
+                width: 64%;
+            }
+        }
+    }
+
+    &-position {
+        background-position: bottom;
+        background-repeat: no-repeat;
+        padding: 130px 0 110px;
+
+        @include responsive_bothTM {
+            padding: 80px 0 110px;
+        }
+
+        @include responsive_mobile {
+            padding: 40px 0 110px;
+        }
+
+        &__header {
+            font-size: 3.4rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 54px;
+
+            @include responsive_mobile {
+                font-size: 2.6rem;
+                line-height: 36px;
+                width: 90%;
+                margin: 0 auto 48px;
+            }
+        }
+
+        &__list {
+            @include gridBox(3, 40px, 48px);
+
+            @include responsive_bothTM {
+                @include gridBox(2, 30px, 20px);
+            }
+
+            @include responsive_mobile {
+                @include gridBox(1, 30px, 20px);
+            }
+        }
+
+        &__item {
+            display: flex;
+            align-items: flex-start;
+
+            @include responsive_mobile {
+                &>img {
+                    width: 60px;
+                }
+            }
+        }
+
+        &__info {
+            padding-left: 20px;
+        }
+
+        &__heading {
+            font-size: 2.4rem;
+
+            @include responsive_pcLower {
+                font-size: 2rem;
+            }
+
+            @include responsive_bothTM {
+                font-size: 2rem;
+            }
+        }
+
+        &__text {
+            margin-top: 18px;
+            line-height: 28px;
+            font-size: 2rem;
+
+            @include responsive_pcLower {
+                font-size: 1.8rem;
+                line-height: 22px;
+                margin-top: 12px;
+            }
+
+            @include responsive_bothTM {
+                font-size: 1.8rem;
+                line-height: 22px;
+                margin-top: 12px;
             }
         }
     }
@@ -369,7 +455,11 @@
 
         .nav-tabs {
             border: 0;
-            width: 100%;
+            width: 71%;
+
+            @include responsive_bothTM {
+                width: 100%;
+            }
 
             .nav-item {
                 margin-right: 10px;
@@ -407,6 +497,7 @@
                 font-size: 2rem;
                 width: 100%;
                 text-transform: uppercase;
+                @include flexBox(both);
 
                 color: $back-white;
                 border-top-left-radius: 12px;
@@ -414,6 +505,11 @@
 
                 @include responsive_mobile {
                     font-size: 1.6rem;
+                }
+
+                @include responsive_small {
+                    text-align: center;
+                    line-height: 22px;
                 }
             }
         }
@@ -642,6 +738,186 @@
 
             @include responsive_mobile {
                 text-align: center;
+            }
+        }
+    }
+
+    &-booking {
+        .modal-dialog {
+            max-width: 68%;
+
+            @include responsive_bothTM {
+                max-width: 88%;
+            }
+
+            @include responsive_mobile {
+                max-width: 100%;
+            }
+        }
+
+        .modal-content {
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .modal-body {
+            padding: 34px 35px;
+            background-color: rgba(235, 235, 235, 0.76);
+
+            @include responsive_mobile {
+                padding: 40px 24px;
+            }
+        }
+
+        .form-floating.single,
+        &__route,
+        &__cover {
+            margin-bottom: 18px;
+        }
+
+        .form-floating.single,
+        &__cover {
+
+            @include responsive_pcLower {
+                &>.row {
+                    &>.col-md-12.col-sm-12 {
+                        width: 100%;
+
+                        &:first-child {
+                            margin-bottom: 18px;
+
+                        }
+                    }
+                }
+            }
+
+            @include responsive_bothTM {
+                &>.row {
+                    &>.col-md-12.col-sm-12 {
+
+                        &:first-child {
+                            margin-bottom: 18px;
+
+                        }
+                    }
+                }
+            }
+
+            // @include flexBox(bothSides);
+            label,
+            input {
+                font-size: 1.8rem;
+            }
+
+            input {
+                border-radius: 8px;
+            }
+
+            .form-control {
+                padding: 14px 16px 6px;
+                height: 100%;
+
+                &:focus~label,
+                &:not(:placeholder-shown)~label {
+                    padding: 10px 18px;
+                    font-size: 1.7rem;
+                }
+
+                &:focus,
+                &:not(:placeholder-shown) {
+                    padding-top: 23px;
+                    padding-bottom: 6px;
+                }
+            }
+
+            .form-floating {
+                height: 48px;
+
+                &>label {
+                    padding: 12px 16px;
+                }
+            }
+        }
+
+        .form-floating.single {
+            height: 48px;
+
+            &.area {
+                height: auto;
+            }
+
+            &>label {
+                padding: 12px 16px;
+            }
+
+            &>textarea {
+                border-radius: 8px;
+                font-size: 1.8rem;
+            }
+        }
+
+        &__route {
+            @include flexBox(hor);
+
+            @include responsive_bothTM {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .form-label {
+                min-width: 110px;
+                margin-right: 20px;
+            }
+
+            select {
+                border-radius: 8px;
+                padding: 8px 10px;
+                font-size: 1.8rem;
+
+                @include responsive_bothTM {
+                    margin-top: 6px;
+                }
+            }
+        }
+
+        &__sent {
+            padding-top: 16px;
+            @include flexBox(both);
+
+            @include responsive_pcLower {
+                flex-direction: column;
+            }
+
+            @include responsive_bothTM {
+                flex-direction: column;
+            }
+
+            &>p {
+                display: block;
+                margin-left: 28px;
+                font-size: 1.8rem;
+
+                @include responsive_mobile {
+                    margin-left: 0px;
+                    text-align: center;
+                    width: 90%;
+                    line-height: 2.4rem;
+                }
+            }
+        }
+
+        &__btn {
+            padding: 7px 40px;
+            border-radius: 50px;
+            text-transform: uppercase;
+
+            @include responsive_pcLower {
+                margin-bottom: 14px;
+            }
+
+            @include responsive_bothTM {
+                margin-bottom: 16px;
+                padding: 8px 50px;
             }
         }
     }

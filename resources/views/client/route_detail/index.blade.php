@@ -48,7 +48,10 @@
                                 </svg>
                                 <p>{{optional(\App\Info::first())->phone}}</p>
                             </div>
-                            <button class="btn btn-button details-banner__btn">Đặt vé ngay</button>
+                            <button class="btn btn-button details-banner__btn" data-bs-toggle="modal"
+                                    data-bs-target="#booking">
+                                Đặt vé ngay
+                            </button>
                         </div>
                     </div>
 
@@ -234,7 +237,8 @@
                 </div>
 
                 <div class="details-info__action">
-                    <button class="btn-button btn details-info__btn">
+                    <button class="btn-button btn details-info__btn" data-bs-toggle="modal"
+                            data-bs-target="#booking">
                         Đặt vé ngay
                     </button>
 
@@ -290,9 +294,112 @@
             </div>
         </div>
     </section>
+    <div class="modal fade details-booking" id="booking" tabindex="-1" aria-hidden="true">
+
+
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="details-booking__cover">
+                            <div class="row gx-4">
+                                <div class="col-lg-8 col-md-12 col-sm-12">
+                                    <div class="form-floating name">
+                                        <input type="text" class="form-control" id="nameInput" placeholder="Họ và tên">
+                                        <label for="name">Họ và tên <sup class="color-red">*</sup></label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-12 col-sm-12">
+                                    <div class="form-floating phone">
+                                        <input type="tel" class="form-control" id="phoneInput" placeholder="Số điện thoại">
+                                        <label for="phone">Số điện thoại <sup class="color-red">*</sup></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="details-booking__cover">
+                            <div class="row gx-4">
+                                <div class="col-lg-9 col-md-12 col-sm-12">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="emailInput" placeholder="Địa chỉ Email">
+                                        <label for="email">Địa chỉ Email</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-md-12 col-sm-12">
+                                    <div class="form-floating">
+                                        <input type="tel" class="form-control" id="numGuestInput"
+                                               placeholder="Số lượng khách">
+                                        <label for="guest">Số lượng khách <sup class="color-red">*</sup></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="details-booking__route">
+                            <label for="exampleFormControlInput1" class="form-label">
+                                Tuyến đường <sup class="color-red">*</sup>
+                            </label>
+                            <select class="form-select" aria-label="Default select example" id="route">
+                                @foreach($related as $element)
+                                    <option value="{{$element->id}}">{{$element->route_name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        <div class="details-booking__cover">
+                            <div class="row gx-4">
+                                <div class="col-lg-5 col-md-12 col-sm-12">
+                                    <div class="form-floating">
+                                        <input type="time" class="form-control" id="timeInput" placeholder="Giờ đi">
+                                        <label for="time">Giờ đi <sup class="color-red">*</sup></label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7 col-md-12 col-sm-12">
+                                    <div class="form-floating">
+                                        <input type="date" class="form-control" id="dayInput" placeholder="Ngày đi">
+                                        <label for="day">Ngày đi <sup class="color-red">*</sup></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-floating single">
+                            <input type="tel" class="form-control" id="depart_addr" placeholder="Địa chỉ đón">
+                            <label for="depart_address">Địa chỉ đón <sup class="color-red">*</sup></label>
+                        </div>
+
+                        <div class="form-floating single">
+                            <input type="tel" class="form-control" id="destination" placeholder="Địa chỉ tra">
+                            <label for="destination">Địa chỉ trả <sup class="color-red">*</sup></label>
+                        </div>
+
+                        <div class="form-floating single area">
+                        <textarea class="form-control" placeholder="Leave a comment here" id="note"
+                                  style="height: 150px" name="note"></textarea>
+                            <label for="floatingTextarea2">Ghi chú</label>
+                        </div>
+
+                        <div class="details-booking__sent">
+                            <button onclick="submitForm(event)" class="details-booking__btn btn btn-button">
+                                Gửi yêu cầu
+                            </button>
+                            <p>
+                                ( Nhân viên sẽ xác nhận trong vòng 15 phút )
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+    </div>
 @endsection
 
 @section('js')
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         // ==================== Slide Details Image ================
         var swiper = new Swiper(".detailsSwiper", {
@@ -328,5 +435,44 @@
             //     clickable: true,
             // },
         });
+
+        function submitForm(event) {
+            let CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+            let note=$('#note').val();
+            let destination=$('#destination').val();
+            let depart_addr=$('#depart_addr').val();
+            let time=$('#timeInput').val();
+            let day=$('#dayInput').val();
+            let route=$('#route').val();
+            let guest=$('#numGuestInput').val();
+            let email=$('#emailInput').val();
+            let phone=$('#phoneInput').val();
+            let name=$('#nameInput').val();
+
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                url: '{{route('postTR')}}',
+                type: 'POST',
+                /* send the csrf-token and the input to the controller */
+                data: { 'note':note,'destination':destination,'depart_addr':depart_addr,'time':time,'day':day,'route':route,'guest':guest,'email':email,'phone':phone,'name':name},
+
+                /* remind that 'data' is the response of the AjaxController */
+                beforeSend:function () {
+                    Swal.showLoading();
+                },
+                success: function (data) {
+                    Swal.fire(
+                        'Đặt vé thành công!',
+                        '',
+                        'success'
+                    )
+                    console.log(data);
+                    // $(".writeinfo").append(data.msg);
+                },
+
+            });
+        }
     </script>
 @endsection

@@ -67,6 +67,34 @@
         }
     }
 
+    &-brand {
+        @include gridBox(4, 30px, 10px);
+
+        @include responsive_HD {
+            @include gridBox(4, 30px, 18px);
+        }
+
+        @include responsive_pcLower {
+            @include gridBox(3, 30px, 16px);
+        }
+
+        @include responsive_table {
+            @include gridBox(2, 30px, 26px);
+
+            .brand-slide__img {
+                width: 100%;
+            }
+        }
+
+        @include responsive_mobile {
+            @include gridBox(1, 26px, 26px);
+
+            .brand-slide__img {
+                width: 100%;
+            }
+        }
+    }
+
     &-wrapper {
 
         .swiper-button-next,

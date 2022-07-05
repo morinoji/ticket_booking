@@ -15,18 +15,18 @@
         <div class="popular-page hide-on-mobile-tablet">
             <div class="popular-slide__item">
                 <div class="popular-slide__left">
-                    <a href="#" class="popular-slide__large">
+                    <a href="{{isset($routes[0]->route_name) ? route('findRoute',['id'=>$routes[0]->id ?? 0]):'#'}}" class="popular-slide__large">
                         <img src="{{$routes[0]->image?? asset('RouteBus/assets/images/Banner/Mask Group 1.png')}}" alt="Image located">
                         <span class="popular-slide__text">{{$routes[0]->route_name?? ''}}</span>
                     </a>
 
                     <div class="popular-slide__bottom">
-                        <a href="#" class="popular-slide__small">
+                        <a href="{{isset($routes[1]->route_name) ? route('findRoute',['id'=>$routes[1]->id ?? 0]):'#'}}" class="popular-slide__small">
                             <img src="{{$routes[1]->image?? asset('RouteBus/assets/images/Banner/Mask Group 3.png')}}" alt="Image located">
                             <span class="popular-slide__text">{{$routes[1]->route_name?? ''}}</span>
                         </a>
 
-                        <a href="#" class="popular-slide__medium">
+                        <a href="{{isset($routes[2]->route_name) ? route('findRoute',['id'=>$routes[2]->id ?? 0]):'#'}}" class="popular-slide__medium">
                             <img src="{{$routes[2]->image?? asset('RouteBus/assets/images/Banner/Mask Group 4.png')}}" alt="Image located">
                             <span class="popular-slide__text">{{$routes[2]->route_name?? ''}}</span>
                         </a>
@@ -34,7 +34,7 @@
                 </div>
 
                 <div class="popular-slide__right">
-                    <a href="#">
+                    <a href="{{isset($routes[3]->route_name) ? route('findRoute',['id'=>$routes[3]->id ?? 0]):'#'}}">
                         <!-- <div class="popular-slide__right-cover"> -->
                         <img src="{{$routes[3]->image?? asset('RouteBus/assets/images/Banner/Mask Group 2.png')}}" alt="Image located">
                         <!-- </div> -->
@@ -45,7 +45,7 @@
 
             <div class="popular-slide__item">
                 <div class="popular-slide__right">
-                    <a href="#">
+                    <a href="{{isset($routes[4]->route_name) ? route('findRoute',['id'=>$routes[4]->id ?? 0]):'#'}}">
                         <!-- <div class="popular-slide__right-cover"> -->
                         <img src="{{$routes[4]->image?? asset('RouteBus/assets/images/Banner/Mask Group 2.png')}}" alt="Image located">
                         <!-- </div> -->
@@ -54,18 +54,18 @@
                 </div>
 
                 <div class="popular-slide__left">
-                    <a href="#" class="popular-slide__large">
+                    <a href="{{isset($routes[5]->route_name) ? route('findRoute',['id'=>$routes[5]->id ?? 0]):'#'}}" class="popular-slide__large">
                         <img src="{{$routes[5]->image?? asset('RouteBus/assets/images/Banner/Mask Group 1.png')}}" alt="Image located">
                         <span class="popular-slide__text">{{$routes[5]->route_name?? ''}}</span>
                     </a>
 
                     <div class="popular-slide__bottom">
-                        <a href="#" class="popular-slide__small">
+                        <a href="{{isset($routes[6]->route_name) ? route('findRoute',['id'=>$routes[6]->id ?? 0]):'#'}}" class="popular-slide__small">
                             <img src="{{$routes[6]->image ?? asset('RouteBus/assets/images/Banner/Mask Group 3.png')}}" alt="Image located">
                             <span class="popular-slide__text">{{$routes[6]->route_name?? ''}}</span>
                         </a>
 
-                        <a href="#" class="popular-slide__medium">
+                        <a href="{{isset($routes[7]->route_name) ? route('findRoute',['id'=>$routes[7]->id ?? 0]):'#'}}" class="popular-slide__medium">
                             <img src="{{$routes[7]->image ?? asset('RouteBus/assets/images/Banner/Mask Group 4.png')}}" alt="Image located">
                             <span class="popular-slide__text">{{$routes[7]->route_name?? ''}}</span>
                         </a>
@@ -77,7 +77,7 @@
         <div class="popular-page__mobile">
             @foreach($routes as $route)
             <div class="popular-page__mobile-item">
-                <a href="#" class="popular-page__mobile-link">
+                <a href="{{route('findRoute',['id'=>$route->id])}}" class="popular-page__mobile-link">
                     <!-- <div class="popular-slide__right-cover"> -->
                     <img src="{{$route->image ?? asset('RouteBus/assets/images/Banner/Mask Group 2.png')}}" alt="Image located">
                     <!-- </div> -->

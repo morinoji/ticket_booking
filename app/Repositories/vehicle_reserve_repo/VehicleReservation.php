@@ -18,7 +18,7 @@ class VehicleReservation extends BaseRepository implements VehicleReservationInt
     //list tuyến đường kèm paginate
     public function getVehicleReservation($search,$dateRange,$status,$comp)
     {
-        $query = $this->model->join('travel_comps','vehicle_reservations.comp_id','=','travel_comps.id')->leftJoin('vehicles','vehicle_reservations.vehicle_id','=','vehicles.id')->select('vehicle_reservations.*','travel_comps.comp_name','vehicles.vehicle_name','vehicles.vehicle_slots');
+        $query = $this->model->leftJoin('travel_comps','vehicle_reservations.comp_id','=','travel_comps.id')->leftJoin('vehicles','vehicle_reservations.vehicle_id','=','vehicles.id')->select('vehicle_reservations.*','travel_comps.comp_name','vehicles.vehicle_name','vehicles.vehicle_slots');
 
         if ($dateRange!='') {
             $dateRangeDetail=explode(' - ',$dateRange);

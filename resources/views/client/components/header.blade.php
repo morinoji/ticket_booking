@@ -9,13 +9,13 @@
                 </div>
 
                 <nav class="nav header-list hide-on-mobile-tablet">
-                    <a class="nav-link active" aria-current="page" href="#">
+                    <a class="nav-link active" aria-current="page" href="{{route('listingPop')}}">
                         {{trans('home.route')}}
                     </a>
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="{{route('listingPopCarrier')}}">
                         {{trans('home.carrier')}}
                     </a>
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="{{route('rentalIndex')}}">
                         {{trans('home.rental')}}
                     </a>
                 </nav>

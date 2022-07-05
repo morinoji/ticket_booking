@@ -22,7 +22,10 @@
                                         <input type="text" class="form-control" name="name"
                                                placeholder="Nhập tên slide">
                                     </div>
-
+                                    <div class="form-check mb-2 mt-3">
+                                        <input class="form-check-input" id="validationFormCheck1" type="checkbox" name="is_contract">
+                                        <label class="form-check-label" for="validationFormCheck1">Thuê xe hợp đồng</label>
+                                    </div>
                                 </div>
                                 <div class="col-1"></div>
                                 <div class="col-4">

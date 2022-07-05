@@ -88,8 +88,34 @@
             @include gridBox(3, 20px, 20px);
         }
 
+        @include responsive_bothTM {
+            @include gridBox(3, 20px, 20px);
+
+            .brand-slide__info>img {
+                width: 90px;
+            }
+
+            .brand-slide__text {
+                font-size: 1.7rem;
+            }
+
+            .brand-slide__info {
+                bottom: -80px;
+                margin-left: 9px;
+            }
+        }
+
         @include responsive_mobile {
             @include gridBox(2, 10px, 10px);
+
+            .brand-slide__info>img {
+                width: 74px;
+            }
+
+            .brand-slide__info {
+                bottom: -75px;
+                margin-left: 9px;
+            }
         }
 
         .popular-page__mobile-item {

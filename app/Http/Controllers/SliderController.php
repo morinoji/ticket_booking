@@ -37,7 +37,7 @@ class SliderController extends Controller
     {
         $dataCreate = [
             'name' => $request->name,
-
+            'is_contract'=>$request->is_contract?'1': '0'
         ];
         $data = $this->storageTraitUploadwoResize($request, 'image', 'slider');
         if (!empty($data)) {
@@ -59,7 +59,7 @@ class SliderController extends Controller
     {
         $dataCreate = [
             'name' => $request->name,
-
+            'is_contract'=>$request->is_contract?'1': '0'
         ];
 
         $data = $this->storageTraitUploadwoResize($request, 'image', 'slider');

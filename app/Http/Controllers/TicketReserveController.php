@@ -64,14 +64,13 @@ class TicketReserveController extends Controller
     }
 
     public function create(Request $request){
-
         $attrs=[
           'route_id'=>$request->route,
           'comp_id'=>$request->comp,
           'full_name'=>$request->name,
           'phone'=>$request->phone_number,
           'email'=>$request->email,
-          'guest_number'=>$request->  guest,
+          'guest_number'=>$request->guest,
           'depart_datetime'=>$request->depart_time,
           'depart_address'=>$request->depart_address,
           'destination'=>$request->destination,

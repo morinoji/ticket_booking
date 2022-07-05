@@ -451,8 +451,8 @@
            let row= event.currentTarget.parentNode.parentNode;
 
             Swal.fire({
-                title: 'Xóa đơn đặt hàng?',
-                text: "Bạn xác nhận xóa đơn đặt hàng!",
+                title: 'Xóa đơn đặt vé?',
+                text: "Bạn xác nhận xóa đơn đặt vé!",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
@@ -477,7 +477,7 @@
                             row.remove();
                             Swal.fire(
                                 'Đã xóa!',
-                                'Đơn đặt hàng đã được xóa.',
+                                'Đơn đặt vé đã được xóa.',
                                 'Thành công!'
                             )
                         },

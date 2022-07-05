@@ -3,12 +3,14 @@
         <div class="swiper-wrapper">
             <!-- slider image -->
             @foreach($sliders as $slider)
+                @if($slider->is_contract==0)
                 <div class="swiper-slide banner-slide__item">
                     <a href="#" class="banner-slide__link">
                         <img src="{{$slider->image}}" alt="Image Banner"
                              class="banner-slide__img">
                     </a>
                 </div>
+                @endif
             @endforeach
         </div>
 

@@ -35,6 +35,10 @@ body {
     display: none !important;
 }
 
+.color-yellow {
+    background-image: initial !important;
+    background-color: $yellow-color !important;
+}
 
 .color-red {
     color: $red-color;
@@ -61,6 +65,7 @@ button:hover {
     @include flexBox(both);
 }
 
+.travel-slide__button,
 .brand-slide__button,
 .banner-slide__button,
 .popular-slide__button {

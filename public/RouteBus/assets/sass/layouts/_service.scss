@@ -85,4 +85,74 @@
             }
         }
     }
+
+    &-rent {
+        padding-bottom: 84px;
+
+        @include responsive_mobile {
+            padding: 35px 0 42px;
+
+            .service-title__domain {
+                font-size: 3.2rem;
+            }
+        }
+
+        .service-title {
+            margin-bottom: 64px;
+
+            &__description {
+                margin-bottom: 10px;
+            }
+        }
+
+        .service-option {
+            @include gridBox(4, 20px, 40px);
+
+            @include responsive_bothTM {
+                @include gridBox(2, 36px, 40px);
+            }
+
+            @include responsive_mobile {
+                @include gridBox(2, 26px, 20px);
+            }
+
+            &__item {
+                flex-direction: column;
+            }
+
+            &__text {
+                color: $back-gray;
+                line-height: 25px;
+            }
+
+            &__icon {
+                @include responsive_bothTM {
+                    margin: 0 0 0px;
+                }
+
+                &>img {
+                    min-height: 100px;
+                }
+            }
+        }
+
+        .service-option__text,
+        &__title {
+            text-align: center;
+        }
+
+        &__title {
+            font-weight: 400;
+            margin: 16px 0 14px;
+            font-size: 2rem;
+
+            @include responsive_bothTM {
+                margin: 16px 0 8px;
+            }
+        }
+
+        &__img {
+            margin-top: 70px;
+        }
+    }
 }

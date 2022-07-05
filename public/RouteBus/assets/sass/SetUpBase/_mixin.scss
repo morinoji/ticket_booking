@@ -20,10 +20,10 @@ $res_table: "only screen and (min-width: 46.25em) and (max-width: 63.9375em)";
 $res_mobile: "only screen and (max-width: 46.1875em)";
 
 /* Phone Small */
-$res_small: "only screen and (max-width: 20em)";
+$res_small: "only screen and (max-width: 23.5em)";
 
 // Phone Small 
-@mixin responsive_ip5 {
+@mixin responsive_small {
     @media #{$res_small} {
         @content;
     }

@@ -13,4 +13,14 @@ class TravelComp extends Model
     {
         return $this->hasMany(CompImage::class,'comp_id','id');
     }
+
+    public function getAreas()
+    {
+        return $this->hasMany(WorkingArea::class,'comp_id','id');
+    }
+
+    public function getDetails()
+    {
+        return $this->hasMany(RouteDetail::class,'comp_id','id');
+    }
 }

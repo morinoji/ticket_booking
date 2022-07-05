@@ -38,6 +38,13 @@ class CompRepository extends BaseRepository implements CompRepositoryInterface
         return $this->model->join('route_details','travel_comps.id','=','route_details.comp_id')->select('travel_comps.*')->where('route_id',$route)->get();
     }
 
+    public function paginate()
+    {   $comps=$this->model->latest()->paginate(10);
+        return $this->injectImage($comps);
+    }
 
-
+//    public function findWeb($id)
+//    {
+//        return $this->model->join()
+//    }
 }
