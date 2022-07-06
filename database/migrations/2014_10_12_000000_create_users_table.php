@@ -24,6 +24,10 @@ class CreateUsersTable extends Migration
             $table->string('depart');
             $table->string('password');
             $table->date('start_woriking')->nullable();
+            $table->tinyInteger('is_admin')->default(0);
+            $table->bigInteger('role_id')->default(0);
+            $table->bigInteger('user_status_id')->default(1);
+
             $table->rememberToken();
             $table->timestamps();
         });

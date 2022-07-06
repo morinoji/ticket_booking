@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\TicketStatus;
 use App\Repositories\comp_repo\CompRepositoryInterface;
 use App\Repositories\route_repo\RouteRepositoryInterface;
 use App\Repositories\ticket_repo\TicketRepositoryInterface;
-use App\TicketStatus;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\RelatedRoute;
+use App\Models\RelatedRoute;
+use App\Models\RouteImage;
 use App\Repositories\comp_repo\CompRepositoryInterface;
 use App\Repositories\route_repo\RouteRepositoryInterface;
-use App\RouteImage;
 use App\Traits\StorageImageTrait;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;

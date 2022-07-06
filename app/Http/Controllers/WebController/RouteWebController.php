@@ -3,12 +3,12 @@
 namespace App\Http\Controllers\WebController;
 
 use App\Http\Controllers\Controller;
-use App\RelatedRoute;
+use App\Models\RelatedRoute;
+use App\Models\RouteDetail;
+use App\Models\RouteImage;
+use App\Models\Slider;
 use App\Repositories\route_repo\RouteRepositoryInterface;
 use App\Repositories\vehicle_repo\VehicleRepositoryInterface;
-use App\RouteDetail;
-use App\RouteImage;
-use App\Slider;
 use Illuminate\Http\Request;
 
 class RouteWebController extends Controller

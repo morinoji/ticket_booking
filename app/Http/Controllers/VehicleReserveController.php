@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\TicketStatus;
+use App\Models\VehicleComp;
 use App\Repositories\comp_repo\CompRepositoryInterface;
-
 use App\Repositories\vehicle_repo\VehicleRepositoryInterface;
 use App\Repositories\vehicle_reserve_repo\VehicleReservationInterface;
-use App\TicketStatus;
-use App\VehicleComp;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 
-use App\VehicleStatus;
+use App\Models\VehicleStatus;
 use Illuminate\Http\Request;
 
 class VehicleStatusController extends Controller

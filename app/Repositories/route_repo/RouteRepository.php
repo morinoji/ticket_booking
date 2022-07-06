@@ -1,8 +1,8 @@
 <?php
 namespace App\Repositories\route_repo;
 
+use App\Models\Route;
 use App\Repositories\BaseRepository;
-use App\Route;
 
 class RouteRepository extends BaseRepository implements RouteRepositoryInterface
 {

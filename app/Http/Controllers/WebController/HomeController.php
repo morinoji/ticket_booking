@@ -3,10 +3,9 @@
 namespace App\Http\Controllers\WebController;
 
 use App\Http\Controllers\Controller;
+use App\Models\Slider;
 use App\Repositories\comp_repo\CompRepositoryInterface;
 use App\Repositories\route_repo\RouteRepositoryInterface;
-use App\Slider;
-use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {

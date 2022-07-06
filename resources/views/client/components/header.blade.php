@@ -4,7 +4,7 @@
             <div class="header-nav">
                 <div class="header-img">
                     <a href="{{route('indexHome')}}" class="header-img__link">
-                        <img src="{{ \App\Info::first()->logo?? asset('RouteBus/assets/images/Logo.png')}}" alt="Image Logo">
+                        <img src="{{ \App\Models\Info::first()->logo?? asset('RouteBus/assets/images/Logo.png')}}" alt="Image Logo">
                     </a>
                 </div>
 

@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\CompImage;
+use App\Models\CompImage;
+use App\Models\RouteDetail;
+use App\Models\WorkingArea;
 use App\Repositories\comp_repo\CompRepositoryInterface;
 use App\Repositories\route_repo\RouteRepositoryInterface;
 use App\Repositories\vehicle_repo\VehicleRepositoryInterface;
 use App\Traits\StorageImageTrait;
-
-use App\WorkingArea;
-use App\RouteDetail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Log;

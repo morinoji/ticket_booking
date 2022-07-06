@@ -1,8 +1,8 @@
 <?php
 namespace App\Repositories\vehicle_repo;
 
+use App\Models\Vehicle;
 use App\Repositories\BaseRepository;
-use App\Vehicle;
 
 class VehicleRepository extends BaseRepository implements VehicleRepositoryInterface
 {

@@ -1,8 +1,8 @@
 <?php
 namespace App\Repositories\comp_repo;
 
+use App\Models\TravelComp;
 use App\Repositories\BaseRepository;
-use App\TravelComp;
 
 class CompRepository extends BaseRepository implements CompRepositoryInterface
 {

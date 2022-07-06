@@ -8,15 +8,17 @@
     ],
     "license": "MIT",
     "require": {
-        "php": "^7.2.5|^8.0",
+        "php": "^7.3|^8.0",
+        "ext-json": "*",
+        "ext-mongodb": "*",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^6.3",
         "intervention/image": "^2.7",
         "laravel/framework": "^7.29",
         "laravel/tinker": "^2.0",
-      "ext-json": "*",
-        "ext-mongodb": "*"
+        "maatwebsite/excel": "^3.1",
+        "owen-it/laravel-auditing": "^13.0"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
@@ -39,7 +41,9 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "app/"
+            "App\\": "app/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/"
         },
         "classmap": [
             "database/seeds",

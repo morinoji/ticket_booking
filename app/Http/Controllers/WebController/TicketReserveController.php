@@ -3,12 +3,8 @@
 namespace App\Http\Controllers\WebController;
 
 use App\Http\Controllers\Controller;
-use App\Repositories\comp_repo\CompRepositoryInterface;
-use App\Repositories\route_repo\RouteRepositoryInterface;
-use App\Repositories\ticket_repo\TicketRepositoryInterface;
-use App\TicketReservation;
+use App\Models\TicketReservation;
 use Illuminate\Http\Request;
-use function MongoDB\BSON\toJSON;
 
 class TicketReserveController extends Controller
 {

@@ -20,7 +20,7 @@
                                 </g>
                             </svg>
 
-                            {{trans('home.contact.addr')}}: {{optional(\App\Info::first()) ->address}}
+                            {{trans('home.contact.addr')}}: {{optional(\App\Models\Info::first()) ->address}}
                         </a>
                     </li>
                     <li class="nav-item">
@@ -34,7 +34,7 @@
                                       fill="#f58523" />
                             </svg>
 
-                            Hotline: {{optional(\App\Info::first()) ->phone}}
+                            Hotline: {{optional(\App\Models\Info::first()) ->phone}}
                         </a>
                     </li>
                     <li class="nav-item">
@@ -50,7 +50,7 @@
                                 </g>
                             </svg>
 
-                            Email:  {{optional(\App\Info::first())->email}}
+                            Email:  {{optional(\App\Models\Info::first())->email}}
                         </a>
                     </li>
 
@@ -67,7 +67,7 @@
                                 </g>
                             </svg>
 
-                            {{trans('home.contact.working')}}:  {{optional(\App\Info::first())->working_hour}}
+                            {{trans('home.contact.working')}}:  {{optional(\App\Models\Info::first())->working_hour}}
                         </a>
                     </li>
 
@@ -81,7 +81,7 @@
 
                 <ul class="nav flex-column footer-nav">
                     @if(Config::get('app.locale')=='en')
-                        @foreach(\App\InfoList::all() as $element)
+                        @foreach(\App\Models\InfoList::all() as $element)
                             <li class="nav-item">
                                 <a class="nav-link footer-nav__link" href="{{$element->link}}">
                                     <svg id="arrow-right" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -98,7 +98,7 @@
                             </li>
                         @endforeach
                     @elseif(Config::get('app.locale')=='vi')
-                        @foreach(\App\InfoList::all() as $element)
+                        @foreach(\App\Models\InfoList::all() as $element)
                             <li class="nav-item">
                                 <a class="nav-link footer-nav__link" href="{{$element->link}}">
                                     <svg id="arrow-right" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -123,15 +123,15 @@
     <div class="footer-bottom">
         <div class="container-xl">
             <div class="footer-bottom__cover">
-                <h3 class="footer-heading">{{optional(\App\Info::first())->name}}</h3>
+                <h3 class="footer-heading">{{optional(\App\Models\Info::first())->name}}</h3>
                 <p class="footer-bottom__text">
-                    {{trans('home.infor.regAddr')}}: {{optional(\App\Info::first()) ->enterprise_addr}}
+                    {{trans('home.infor.regAddr')}}: {{optional(\App\Models\Info::first()) ->enterprise_addr}}
                 </p>
                 <p class="footer-bottom__text">
-                    {{trans('home.infor.addr')}}: {{optional(\App\Info::first()) ->address}}
+                    {{trans('home.infor.addr')}}: {{optional(\App\Models\Info::first()) ->address}}
                 </p>
                 <p class="footer-bottom__text">
-                    {{trans('home.infor.cer')}}: {{optional(\App\Info::first()) ->dkkd}}
+                    {{trans('home.infor.cer')}}: {{optional(\App\Models\Info::first()) ->dkkd}}
                 </p>
                 <p class="footer-bottom__text premium">
                     Copyright © 2022 Bản quyền thuộc về PROHOME GROUP

@@ -1,9 +1,9 @@
 <?php
 namespace App\Repositories\ticket_repo;
 
+use App\Models\TicketReservation;
+use App\Models\TicketStatus;
 use App\Repositories\BaseRepository;
-use App\TicketReservation;
-use App\TicketStatus;
 use Carbon\Carbon;
 
 class TicketRepository extends BaseRepository implements TicketRepositoryInterface

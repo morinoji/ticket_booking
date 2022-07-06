@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\WebController;
 
-use App\HotLocation;
 use App\Http\Controllers\Controller;
+use App\Models\HotLocation;
+use App\Models\Slider;
 use App\Repositories\vehicle_repo\VehicleRepositoryInterface;
 use App\Repositories\vehicle_reserve_repo\VehicleReservationInterface;
-use App\Slider;
 use Illuminate\Http\Request;
 
 class RentalController extends Controller

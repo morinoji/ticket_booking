@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Info;
-use App\InfoList;
+use App\Models\Info;
+use App\Models\InfoList;
 use App\Traits\StorageImageTrait;
 use Illuminate\Http\Request;
 

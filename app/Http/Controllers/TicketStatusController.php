@@ -1,9 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\TicketStatus;
+use App\Models\TicketStatus;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
 
 class TicketStatusController extends Controller
 {

@@ -1,11 +1,9 @@
 <?php
 namespace App\Repositories\vehicle_reserve_repo;
 
+use App\Models\TravelComp;
+use App\Models\VehicleStatus;
 use App\Repositories\BaseRepository;
-use App\TravelComp;
-use App\Vehicle;
-use App\VehicleComp;
-use App\VehicleStatus;
 use Carbon\Carbon;
 
 class VehicleReservation extends BaseRepository implements VehicleReservationInterface
@@ -13,7 +11,7 @@ class VehicleReservation extends BaseRepository implements VehicleReservationInt
     //lấy model tương ứng
     public function getModel()
     {
-        return \App\VehicleReservation::class;
+        return \App\Models\VehicleReservation::class;
     }
     //list tuyến đường kèm paginate
     public function getVehicleReservation($search,$dateRange,$status,$comp)

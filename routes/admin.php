@@ -20,7 +20,69 @@ use App\Http\Controllers\VehicleStatusController;
 |
 */
 
+Route::prefix('admin')->group(function () {
+    Route::get('/', [
+        'uses' => 'Admin\AdminController@loginAdmin',
+    ]);
 
+    Route::post('/', [
+        'uses' => 'Admin\AdminController@postLoginAdmin',
+    ]);
+
+    Route::get('/logout', [
+        'as' => 'administrator.logout',
+        'uses' => 'Admin\AdminController@logout',
+    ]);
+
+});
+
+Route::prefix('administrator')->group(function () {
+    Route::prefix('users')->group(function () {
+
+        Route::get('/', [
+            'as' => 'administrator.users.index',
+            'uses' => 'Admin\AdminUserController@index',
+            'middleware' => 'can:user-list',
+        ]);
+
+        Route::get('/create', [
+            'as' => 'administrator.users.create',
+            'uses' => 'Admin\AdminUserController@create',
+            'middleware' => 'can:user-add',
+        ]);
+
+        Route::post('/store', [
+            'as' => 'administrator.users.store',
+            'uses' => 'Admin\AdminUserController@store',
+            'middleware' => 'can:user-add',
+        ]);
+
+        Route::get('/edit/{id}', [
+            'as' => 'administrator.users.edit',
+            'uses' => 'Admin\AdminUserController@edit',
+            'middleware' => 'can:user-edit',
+        ]);
+
+        Route::put('/update/{id}', [
+            'as' => 'administrator.users.update',
+            'uses' => 'Admin\AdminUserController@update',
+            'middleware' => 'can:user-edit',
+        ]);
+
+        Route::put('/update-status/{id}', [
+            'as' => 'administrator.users.status.update',
+            'uses' => 'Admin\AdminUserController@updateStatus',
+            'middleware' => 'can:user-edit',
+        ]);
+
+        Route::get('/delete/{id}', [
+            'as' => 'administrator.users.delete',
+            'uses' => 'Admin\AdminUserController@delete',
+            'middleware' => 'can:user-delete',
+        ]);
+
+    });
+});
 
 Route::group(['prefix' => 'admin/vehicles'], function () {
     Route::get('/', [VehicleController::class, 'index'])->name('indexVeh');

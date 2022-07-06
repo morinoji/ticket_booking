@@ -46,7 +46,7 @@
                                       d="M26.622,34A24.663,24.663,0,0,1,2,9.36,7.357,7.357,0,0,1,9.354,2a6.3,6.3,0,0,1,1.231.112,6.056,6.056,0,0,1,1.151.288,1.6,1.6,0,0,1,1.039,1.2l2.19,9.6a1.6,1.6,0,0,1-.416,1.472c-.208.224-.224.24-2.19,1.264a15.85,15.85,0,0,0,7.786,7.824c1.039-1.984,1.055-2,1.279-2.208a1.6,1.6,0,0,1,1.471-.416l9.593,2.192a1.6,1.6,0,0,1,1.151,1.04,6.948,6.948,0,0,1,.3,1.168,7.637,7.637,0,0,1,.1,1.216A7.357,7.357,0,0,1,26.622,34Z"
                                       transform="translate(0 0)" fill="#fff" />
                             </svg>
-                            <p>{{optional(\App\Info::first())->phone}}</p>
+                            <p>{{optional(\App\Models\Info::first())->phone}}</p>
                         </div>
 
                         <button class="btn btn-button color-yellow details-banner__btn" data-bs-toggle="modal"
@@ -187,7 +187,7 @@
                               transform="translate(0 0)" fill="#f12711" />
                     </svg>
 
-                    <p>{{optional(\App\Info::first())->phone}}</p>
+                    <p>{{optional(\App\Models\Info::first())->phone}}</p>
                 </a>
             </div>
         </div>

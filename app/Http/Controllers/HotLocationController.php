@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\HotLocation;
+use App\Models\HotLocation;
 use App\Traits\StorageImageTrait;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
