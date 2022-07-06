@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
         $this->call(CreateRoleSeeder::class);
         $this->call(CreatePermissionRoleSeeder::class);
         $this->call(CreateUserSeeder::class);
-        $this->call(CreateLogoSeeder::class);
         $this->call(CreateUserStatusSeeder::class);
+        $this->call(CreateLogoSeeder::class);
     }
 }
